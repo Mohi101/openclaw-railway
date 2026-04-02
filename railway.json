@@ -8,8 +8,8 @@
     "restartPolicyMaxRetries": 10,
     "httpHealthCheck": {
       "path": "/healthz",
-      "port": 3000,
-      "initialDelaySeconds": 60,
+      "port": 18789,
+      "initialDelaySeconds": 120,
       "periodSeconds": 30,
       "timeoutSeconds": 10
     }
