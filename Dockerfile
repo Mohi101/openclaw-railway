@@ -5,6 +5,10 @@ ENV OPENCLAW_GATEWAY_BIND=lan
 
 EXPOSE 3000
 
+# Initialize config and start gateway
+RUN mkdir -p /home/node/.openclaw && \
+    echo '{"gateway":{"port":3000,"bind":"lan","mode":"local"}}' > /home/node/.openclaw/openclaw.json
+
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
   CMD curl -f http://localhost:3000/healthz || exit 1
 
